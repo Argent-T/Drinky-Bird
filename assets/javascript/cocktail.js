@@ -1,19 +1,16 @@
 var cocktailSearch = document.querySelector("#searchbox");
 var ingredientList = document.querySelector("#ingredientUL");
 var measurementList = document.querySelector("#measureUL");
-
+var instructionText = document.querySelector("#instructions");
+var drinkImage = document.querySelector("#drinkimage");
 
 var ingredient = ""
+
+
+
+// searchByName();
+// Search by NAME/////////////////////////////////////////////////////////////////////////////////
 var cocktailName = "whiskey sour"
-
-// buttonName.addEventListener("click", function (event) {
-//     event.preventDefault();
-//     ingredient
-
-
-// });
-searchByName();
-
 function searchByName() {
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + cocktailName
     $.ajax({
@@ -24,6 +21,8 @@ function searchByName() {
         console.log(response);
         instructions = response.drinks[0].strInstructions;
         console.log(instructions);
+        instructionText.textContent = instructions;
+        drinkImage.src= response.drinks[0].strDrinkThumb;
         var ingredients=[];
         var measurements =[];
         
@@ -42,16 +41,34 @@ function searchByName() {
 
         for(i=0; i<ingredients.length; i++){
             ing = ingredients[i];
-
+            mes = measurements[i];
             var liIngredient = document.createElement("li");
-            liIngredient.textcontent = ing;
-            ingredientlist.appendChild(liIngredient);
-
+            liIngredient.textContent = ing;
+            var liMeasure = document.createElement("li");
+            liMeasure.textContent = mes;
+            ingredientList.appendChild(liIngredient);
+            measurementList.appendChild(liMeasure);
         }
-
-
     });
 }
+
+
+
+var letter = "a"
+
+searchByLetter();
+function searchByLetter() {
+    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=" + letter
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log("list by letter")
+        console.log(response);
+    });
+}
+
+
 
 
 
@@ -68,15 +85,6 @@ function searchIngredient() {
         console.log(response);
     });
 }
-
-
-
-
-
-
-
-
-
 
 function listIngredients() {
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
@@ -99,6 +107,13 @@ function listCategory() {
     });
 }
 
+
+// buttonName.addEventListener("click", function (event) {
+//     event.preventDefault();
+//     ingredient
+
+
+// });
 
 
 // listIngredients();
