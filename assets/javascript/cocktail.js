@@ -14,6 +14,7 @@ var ingredient = "vodka"
 // Search by name button and enter key //////////////////////////////////////////////////////////////////////////
 document.querySelector("#searchNameButton").addEventListener("click", function (event) {
     event.preventDefault();
+    document.querySelector("#letterlist").innerHTML = "";
     cocktailName = searchInput.value.trim();
     if (cocktailName !== "") {
         searchByName(cocktailName);
@@ -35,7 +36,7 @@ searchInput.addEventListener("keyup", function (event) {
 
 // Search by name Function/////////////////////////////////////////////////////////////////////////////////
 
-function searchByName() {
+function searchByName(cocktailName) {
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + cocktailName
     $.ajax({
         url: queryURL,
@@ -111,27 +112,35 @@ $(".lB").on("click", function () {
             }
             console.log(drinkList);
             console.log(drinkListImage);
-            for(i=0; i<drinkList.length; i++){
+            for (i = 0; i < drinkList.length; i++) {
                 var letterListName = drinkList[i];
                 var letterListImage = drinkListImage[i];
                 var li = document.createElement("li");
-                li.innerHTML = '<div class="imgcontainer"> <img src= "' + letterListImage + '" alt="'+ letterListName +'" style ="width: 200px;"> <div class = "imageText">'+letterListName+'</div></div>'
+                li.innerHTML = '<div class="imgcontainer"> <img class="drinkListLink" data-name="' + letterListName + '" src= "' + letterListImage + '" alt="' + letterListName + '" style ="width: 200px;"> <div class = "imageText">' + letterListName + '</div></div>'
                 document.querySelector("#letterlist").appendChild(li);
-
             }
-
-
         });
 
     }
 
 });
 
+$(document).on("click",".drinkListLink", function () {
+    console.log("click");
+    document.querySelector("#letterlist").innerHTML = "";
+    var cocktailName = $(this).attr("data-name");
+    console.log(cocktailName)
+    searchByName(cocktailName);
+})
 
 
 
 
 
+
+
+
+// API parts for use later ////////////////////////////////////////////////////////////////////////
 function searchIngredient() {
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredient
     $.ajax({
