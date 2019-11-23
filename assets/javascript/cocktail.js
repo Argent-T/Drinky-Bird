@@ -90,19 +90,11 @@ function searchByName() {
     });
 }
 
-
-
-
-
-
+// SEARCH BY LETTER function////////////////////////////////////////////////////
 $(".lB").on("click", function () {
+    document.querySelector("#letterlist").innerHTML = "";
     var letter = $(this).attr("data-letter");
     searchByLetter(letter);
-
-
-
-    // SEARCH BY LETTER function////////////////////////////////////////////////////
-    // searchByLetter();
     var drinkList = [];
     var drinkListImage = [];
     function searchByLetter() {
@@ -117,9 +109,17 @@ $(".lB").on("click", function () {
                 drinkList.push(response.drinks[i].strDrink);
                 drinkListImage.push(response.drinks[i].strDrinkThumb);
             }
-
             console.log(drinkList);
             console.log(drinkListImage);
+            for(i=0; i<drinkList.length; i++){
+                var letterListName = drinkList[i];
+                var letterListImage = drinkListImage[i];
+                var li = document.createElement("li");
+                li.innerHTML = '<div class="imgcontainer"> <img src= "' + letterListImage + '" alt="'+ letterListName +'" style ="width: 200px;"> <div class = "imageText">'+letterListName+'</div></div>'
+                document.querySelector("#letterlist").appendChild(li);
+
+            }
+
 
         });
 
