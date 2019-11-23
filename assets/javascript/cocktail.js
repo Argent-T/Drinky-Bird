@@ -3,10 +3,12 @@ var searchInput = document.querySelector("#search-input");
 var ingredientList = document.querySelector("#ingredientUL");
 var measurementList = document.querySelector("#measureUL");
 var instructionText = document.querySelector("#instructions");
-var drinkImage = document.querySelector("#drinkimage");
+var drinkImage = document.querySelector("#drinkImage");
+var drinkName = document.querySelector("#drinkName");
 var letterbutton = document.querySelectorAll(".lB");
+var letterList = document.querySelector("#letterlist");
 
-var ingredient = "vodka"
+
 
 
 
@@ -24,6 +26,7 @@ document.querySelector("#searchNameButton").addEventListener("click", function (
 
 searchInput.addEventListener("keyup", function (event) {
     event.preventDefault();
+    document.querySelector("#letterlist").innerHTML = "";
     if (event.key === "Enter") {
         cocktailName = searchInput.value.trim();
         if (cocktailName !== "") {
@@ -53,11 +56,10 @@ function searchByName(cocktailName) {
             instructions = response.drinks[0].strInstructions;
             console.log(instructions);
             instructionText.textContent = instructions;
+            drinkName.textContent = response.drinks[0].strDrink;
             drinkImage.src = response.drinks[0].strDrinkThumb;
             var ingredients = [];
             var measurements = [];
-
-
             for (i = 1; i < 16; i++) {
                 if (response.drinks[0][`strIngredient${i}`] !== null) {
                     ingredients.push(response.drinks[0][`strIngredient${i}`]);
@@ -94,6 +96,8 @@ function searchByName(cocktailName) {
 // SEARCH BY LETTER function////////////////////////////////////////////////////
 $(".lB").on("click", function () {
     // clear rendered results
+    searchInput.value = "";
+    drinkName.textContent = "";
     ingredientList.innerHTML = "";
     measurementList.innerHTML = "";
     drinkImage.src = "";
@@ -132,12 +136,73 @@ $(".lB").on("click", function () {
 });
 
 $(document).on("click", ".drinkListLink", function () {
-    console.log("click");
     document.querySelector("#letterlist").innerHTML = "";
     var cocktailName = $(this).attr("data-name");
-    console.log(cocktailName)
     searchByName(cocktailName);
-})
+});
+
+
+
+// List ingredient search options///////////////////////////////////////////
+
+var ingredientSearchList = ["Vodka", "Gin", "Rum", "Tequila", "Blended Whiskey"]
+for (i = 0; i < ingredientSearchList.length; i++) {
+    var option = ingredientSearchList[i];
+    var li = document.createElement("li");
+    li.innerHTML = '<a class="ingredientOption" data-name="' + option + '">' + option + '</a>';
+    document.querySelector("#dropdown1").appendChild(li);
+}
+$('.dropdown-trigger').dropdown();
+
+$(document).on("click", ".ingredientOption", function () {
+    clearAll();
+    var ingredient = $(this).attr("data-name");
+    searchIngredient(ingredient);
+});
+
+
+function searchIngredient(ingredient) {
+    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredient
+    var drinkList = [];
+    var drinkListImage = [];
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log("ingredient")
+        console.log(response);
+        for (i = 0; i < response.drinks.length; i++) {
+            drinkList.push(response.drinks[i].strDrink);
+            drinkListImage.push(response.drinks[i].strDrinkThumb);
+        }
+        console.log(drinkList);
+        console.log(drinkListImage);
+        for (i = 0; i < drinkList.length; i++) {
+            var letterListName = drinkList[i];
+            var letterListImage = drinkListImage[i];
+            var li = document.createElement("li");
+            li.innerHTML = '<div class="imgcontainer"> <img class="drinkListLink" data-name="' + letterListName + '" src= "' + letterListImage + '" alt="' + letterListName + '" style ="width: 200px;"> <div class = "imageText">' + letterListName + '</div></div>'
+            document.querySelector("#letterlist").appendChild(li);
+        }
+    });
+}
+
+
+
+
+function clearAll(){
+    searchInput.value = "";
+    drinkName.textContent = "";
+    ingredientList.innerHTML = "";
+    measurementList.innerHTML = "";
+    drinkImage.src = "";
+    instructionText.textContent = "";
+    document.querySelector("#letterlist").innerHTML = "";
+    console.log("clear");
+}
+
+
+
 
 
 
@@ -147,13 +212,15 @@ $(document).on("click", ".drinkListLink", function () {
 
 
 // API parts for use later ////////////////////////////////////////////////////////////////////////
-function searchIngredient() {
-    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredient
+
+
+function listCategory() {
+    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log("ingredient")
+        console.log("category list")
         console.log(response);
     });
 }
@@ -166,18 +233,12 @@ function listIngredients() {
     }).then(function (response) {
         console.log("Ingredients list: ")
         console.log(response);
+
+
     });
 }
-function listCategory() {
-    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log("category list")
-        console.log(response);
-    });
-}
+
+
 
 
 // buttonName.addEventListener("click", function (event) {
