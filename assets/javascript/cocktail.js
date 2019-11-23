@@ -4,14 +4,14 @@ var ingredientList = document.querySelector("#ingredientUL");
 var measurementList = document.querySelector("#measureUL");
 var instructionText = document.querySelector("#instructions");
 var drinkImage = document.querySelector("#drinkimage");
-var letterbutton = document.querySelector(".letterbutton");
+var letterbutton = document.querySelectorAll(".lB");
 
 var ingredient = "vodka"
 
-var letter = "h";
 
 
-// Search by name button//////////////////////////////////////////////////////////////////////////
+
+// Search by name button and enter key //////////////////////////////////////////////////////////////////////////
 document.querySelector("#searchNameButton").addEventListener("click", function (event) {
     event.preventDefault();
     cocktailName = searchInput.value.trim();
@@ -21,7 +21,19 @@ document.querySelector("#searchNameButton").addEventListener("click", function (
     else { return }
 });
 
-// Search by NAME/////////////////////////////////////////////////////////////////////////////////
+searchInput.addEventListener("keyup", function (event) {
+    event.preventDefault();
+    if (event.key === "Enter") {
+        cocktailName = searchInput.value.trim();
+        if (cocktailName !== "") {
+            searchByName(cocktailName);
+        }
+        else { return }
+    }
+    else { return }
+})
+
+// Search by name Function/////////////////////////////////////////////////////////////////////////////////
 
 function searchByName() {
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + cocktailName
@@ -43,7 +55,7 @@ function searchByName() {
             drinkImage.src = response.drinks[0].strDrinkThumb;
             var ingredients = [];
             var measurements = [];
-            
+
 
             for (i = 1; i < 16; i++) {
                 if (response.drinks[0][`strIngredient${i}`] !== null) {
@@ -58,8 +70,8 @@ function searchByName() {
             console.log(ingredients);
             console.log("measurements");
             console.log(measurements);
-            ingredientList.innerHTML="";
-            measurementList.innerHTML="";
+            ingredientList.innerHTML = "";
+            measurementList.innerHTML = "";
             for (i = 0; i < ingredients.length; i++) {
                 var ing = ingredients[i];
                 var liIngredient = document.createElement("li");
@@ -83,39 +95,37 @@ function searchByName() {
 
 
 
+$(".lB").on("click", function () {
+    var letter = $(this).attr("data-letter");
+    searchByLetter(letter);
 
 
 
+    // SEARCH BY LETTER function////////////////////////////////////////////////////
+    // searchByLetter();
+    var drinkList = [];
+    var drinkListImage = [];
+    function searchByLetter() {
+        var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=" + letter
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log("list by letter")
+            console.log(response);
+            for (i = 0; i < response.drinks.length; i++) {
+                drinkList.push(response.drinks[i].strDrink);
+                drinkListImage.push(response.drinks[i].strDrinkThumb);
+            }
 
+            console.log(drinkList);
+            console.log(drinkListImage);
 
+        });
 
+    }
 
-// SEARCH BY LETTER////////////////////////////////////////////////////
-
-// searchByLetter();
-var drinkList = [];
-var drinkListImage = [];
-function searchByLetter() {
-    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=" + letter
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log("list by letter")
-        console.log(response);
-        for (i = 0; i < response.drinks.length; i++) {
-            drinkList.push(response.drinks[i].strDrink);
-            drinkListImage.push(response.drinks[i].strDrinkThumb);
-        }
-
-        console.log(drinkList);
-        console.log(drinkListImage);
-
-    });
-
-}
-
-
+});
 
 
 
