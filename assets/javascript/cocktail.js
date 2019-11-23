@@ -16,9 +16,9 @@ var letterList = document.querySelector("#letterlist");
 // Search by name button and enter key //////////////////////////////////////////////////////////////////////////
 document.querySelector("#searchNameButton").addEventListener("click", function (event) {
     event.preventDefault();
-    document.querySelector("#letterlist").innerHTML = "";
     cocktailName = searchInput.value.trim();
     if (cocktailName !== "") {
+        document.querySelector("#letterlist").innerHTML = "";
         searchByName(cocktailName);
     }
     else { return }
@@ -26,8 +26,8 @@ document.querySelector("#searchNameButton").addEventListener("click", function (
 
 searchInput.addEventListener("keyup", function (event) {
     event.preventDefault();
-    document.querySelector("#letterlist").innerHTML = "";
     if (event.key === "Enter") {
+        document.querySelector("#letterlist").innerHTML = "";
         cocktailName = searchInput.value.trim();
         if (cocktailName !== "") {
             searchByName(cocktailName);
@@ -96,13 +96,7 @@ function searchByName(cocktailName) {
 // SEARCH BY LETTER function////////////////////////////////////////////////////
 $(".lB").on("click", function () {
     // clear rendered results
-    searchInput.value = "";
-    drinkName.textContent = "";
-    ingredientList.innerHTML = "";
-    measurementList.innerHTML = "";
-    drinkImage.src = "";
-    instructionText.textContent = "";
-    document.querySelector("#letterlist").innerHTML = "";
+   clearAll();
     // begin search
     var letter = $(this).attr("data-letter");
     searchByLetter(letter);
