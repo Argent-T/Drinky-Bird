@@ -93,7 +93,13 @@ function searchByName(cocktailName) {
 
 // SEARCH BY LETTER function////////////////////////////////////////////////////
 $(".lB").on("click", function () {
+    // clear rendered results
+    ingredientList.innerHTML = "";
+    measurementList.innerHTML = "";
+    drinkImage.src = "";
+    instructionText.textContent = "";
     document.querySelector("#letterlist").innerHTML = "";
+    // begin search
     var letter = $(this).attr("data-letter");
     searchByLetter(letter);
     var drinkList = [];
@@ -125,7 +131,7 @@ $(".lB").on("click", function () {
 
 });
 
-$(document).on("click",".drinkListLink", function () {
+$(document).on("click", ".drinkListLink", function () {
     console.log("click");
     document.querySelector("#letterlist").innerHTML = "";
     var cocktailName = $(this).attr("data-name");
