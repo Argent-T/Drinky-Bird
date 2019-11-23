@@ -45,8 +45,8 @@ function searchByName(cocktailName) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log("cocktail");
-        console.log(response);
+        // console.log("cocktail");
+        // console.log(response);
         // make error resolution better later////////////////////////
         if (response.drinks == null) {
             alert("not found")
@@ -54,7 +54,7 @@ function searchByName(cocktailName) {
         }
         else {
             instructions = response.drinks[0].strInstructions;
-            console.log(instructions);
+            // console.log(instructions);
             instructionText.textContent = instructions;
             drinkName.textContent = response.drinks[0].strDrink;
             drinkImage.src = response.drinks[0].strDrinkThumb;
@@ -69,10 +69,10 @@ function searchByName(cocktailName) {
                 }
             }
 
-            console.log("ingredients");
-            console.log(ingredients);
-            console.log("measurements");
-            console.log(measurements);
+            // console.log("ingredients");
+            // console.log(ingredients);
+            // console.log("measurements");
+            // console.log(measurements);
             ingredientList.innerHTML = "";
             measurementList.innerHTML = "";
             for (i = 0; i < ingredients.length; i++) {
@@ -114,14 +114,14 @@ $(".lB").on("click", function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            console.log("list by letter")
-            console.log(response);
+            // console.log("list by letter")
+            // console.log(response);
             for (i = 0; i < response.drinks.length; i++) {
                 drinkList.push(response.drinks[i].strDrink);
                 drinkListImage.push(response.drinks[i].strDrinkThumb);
             }
-            console.log(drinkList);
-            console.log(drinkListImage);
+            // console.log(drinkList);
+            // console.log(drinkListImage);
             for (i = 0; i < drinkList.length; i++) {
                 var letterListName = drinkList[i];
                 var letterListImage = drinkListImage[i];
@@ -169,14 +169,14 @@ function searchIngredient(ingredient) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log("ingredient")
-        console.log(response);
+        // console.log("ingredient")
+        // console.log(response);
         for (i = 0; i < response.drinks.length; i++) {
             drinkList.push(response.drinks[i].strDrink);
             drinkListImage.push(response.drinks[i].strDrinkThumb);
         }
-        console.log(drinkList);
-        console.log(drinkListImage);
+        // console.log(drinkList);
+        // console.log(drinkListImage);
         for (i = 0; i < drinkList.length; i++) {
             var letterListName = drinkList[i];
             var letterListImage = drinkListImage[i];
