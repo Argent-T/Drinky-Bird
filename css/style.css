@@ -3,214 +3,99 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
-  }
+    text-align:left;
+    
+        display: block;
+       
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 1px;
+        margin-inline-end: 1px;
+        padding-inline-start: 40px;
+    
+   }
+   h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 25px;
+}
+   
   li {
     float: left;
-  }
-  li a {
-    display: block;
-    color: white;
+    background-color: rgb(248, 235, 219);
+    display: list-item;
+    font-size: 20px;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+ }
 
-  li a:hover {
-    background-color: #111;
+#findBar {
+    font-size: 30px;
+}
+
+ .profile-img {
+    width: 150px;
+    border-radius: 50%;
+    
+}
+.search-input{
+    position:center;
+}
+  li a {
+    padding: 14px 16px;
+    font-size: 25px;
+    text-decoration: crimson;
+    color:rgb(109, 31, 31);
   }
   .lB {
      text-align: center;
      display: inline;
-  }  
-body{
-    background-color:white;
+     color:rgb(109, 31, 31);
+     font-size:30px;
+  } 
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 20px;
+}
+
+  body{
+    background-color:rgb(248, 235, 219);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    text-align: left;
-    
+    margin: 0px 1px ;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
-  
-  .find{
-      color: white;
-      text-align: center;
-      margin-top: 30px;
-  }
-  
-  .search-module-input {
-      font-family: garamond;
-      width: 30vmax;
-      height: 3vmax;
-      font-size: 2vmax;
-      font-weight: 100;
-      color: #8c8c8c;
-      display: inline-block;
-      padding-left: 1vw;
-  }
-  
-  .search::-webkit-input-placeholder{
-      font-style: italic;
-      opacity: .8;
-  }
-  
-  .label{
-      display: inline-block;
-      padding: 0 0 0 2vw;
-  
-      vertical-align: bottom;
-  
-  }
-  
-  .filter{
-      padding: 4vw
-  
-  }
-  
+
   .button{
       padding: 4vw
-      
-  
   }
-  
-  .unordered{
-      list-style:none;
-      padding-left:0;
-  }
-  .list{
-      margin: 0 auto 2.5vw auto;
-      border: solid white 3px;
-      width: 75vw;
-      /*max-width: 80%;*/
-      text-decoration: none;
-  }
-  
-  
-  
-  .listName{
-  
-      /*border: solid blue 1px;*/
-      display: inline;
-      font-size: 6.5vw;
-      vertical-align: middle;
-      /*text-wrap: none;*/
-      /*margin-left: 25px;*/
-      color: white;
-      padding: 0 10px 0 10px;
-  }
-  
-  .link{
-      text-decoration: none;
-  }
-  
-  /*.container{*/
-      /*align-content: center;*/
-  /*}*/
-  
-  .drinkName{
-      width: 100%;
-      font-size: 8.5vmax;
-      /*border: dashed white 1px;*/
-      display: inline-block;
-      margin: 60px auto 0 auto;
-      text-align: center;
-      color: white;
-  
-  }
-  
-  
-  .nav{
+ 
+.nav{
       width: 100%;
       text-align: center;
       display: inline-block;
       margin-top: 3vw;
   }
-  
-  .ingredientsAndDirections{
-      width: 60%;
-      margin: 70px auto;
-      padding-left: 20%;
-      padding-right: 20%;
-  }
-  
-  
-  h4{
-      border: solid white 4px;
-      color: rgb(0, 0, 0);
-      width: 23vw;
-      min-width: 300px;
-      height: auto;
-      font-size: 1.4vmax;
-      padding: .9vw;
-      float: left;
-      vertical-align: top;
-      margin: 0 auto 40px auto;
-  
-  }
-  
-  
-  .directions {
-      border: solid white 4px;
-      color: white;
-      width: 23vw;
-      min-width: 300px;
-      height: auto;
-      font-size: 1.4vmax;
-      padding: .9vw;
-      float: right;
-      vertical-align: top;
-      margin: 0 auto 0 auto;
-  }
-  
-  .lineItem{
-      padding: 9px;
-  }
-  .back{
-      text-decoration: none;
-      color: white;
-      border: solid white 2px;
-      font-size: 20px;
-      padding: 5px 20px 5px 20px;
-  
-  }
-  
-  .cycle{
-      text-decoration: none;
-      color: white;
-      border: solid white 2px;
-      font-size: 20px;
-      padding: 5px 20px 5px 20px;
-  
-  }
+ 
+ 
+
+
   
   
   @media screen and (max-width: 1092px) {
-      .ingredientsAndDirections {
-          padding: 0;
-          width: 310px;
-          margin-top: 40px;
-      }
+    
   
-      h4 {
-          border: solid white 2px;
-          color: white;
-          width: 300px;
-          height: auto;
-          font-size: 1.6vmax;
-          padding: .9vw;
-          float: none;
-      }
-  
-      .directions {
-          border: solid white 2px;
-          color: white;
-          width: 300px;
-          height: auto;
-          font-size: 1.6vmax;
-          padding: .9vw;
-          float: none;
-      }
+ 
   }
   
   @media screen and (max-width: 632px) {
@@ -218,7 +103,4 @@ body{
           margin-bottom: 10px;
       }
   
-      .drinkName{
-          font-size: 7.4vmax;
-      }
   }
