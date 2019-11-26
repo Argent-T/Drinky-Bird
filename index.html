@@ -1,71 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-        <title>cocktail</title>
-        <!-- FONTS -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    
-        <!-- CSS -->
-        <link rel="stylesheet" href="assets/css/materalize.css">
-        <link rel="stylesheet" href="css/style.css">
-    
-        <!-- MEDIA QUERIES -->
-        <link rel="stylesheet" media="screen and (max-width: 767px)" href="css/style.css">
-        <!--Script-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>cocktail</title>
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+    integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/materalize.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- MEDIA QUERIES -->
+  <link rel="stylesheet" media="screen and (max-width: 767px)" href="css/style.css">
+  <!--Script-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
- <body>
-    <ul>
+
+<body>
+  <ul>
     <a href="cocktails.png">
-        <img src= "images/cocktails.png" class="profile-img" target="blank">
-        </a>
-        
-        <div id="searchName">
-        <input type="text" id="search-input">
-        <button id="searchNameButton">search</button>
-        </div>
-        </ul>
-        <div>
-          <section class="cocktail-container" role="main">
-          <button class="lB" data-letter="A">A</button><button class="lB" data-letter="B">B</button>
-          <button class="lB"data-letter="C">C</button><button class="lB" data-letter="D">D</button>
-          <button class="lB" data-letter="E">E</button><button class="lB" data-letter="F">F</button>
-          <button class="lB" data-letter="D">G</button><button class="lB" data-letter="D">H</button>
-          <button class="lB" data-letter="D">I</button><button class="lB" data-letter="D">J</button>
-          <button class="lB" data-letter="D">K</button><button class="lB" data-letter="D">L</button>
-          <button class="lB" data-letter="D">M</button><button class="lB" data-letter="D">N</button>
-          <button class="lB" data-letter="D">O</button><button class="lB" data-letter="D">P</button>
-          <button class="lB" data-letter="D">Q</button><button class="lB" data-letter="D">R</button>
-          <button class="lB" data-letter="D">S</button><button class="lB" data-letter="D">T</button>
-          <button class="lB" data-letter="D">U</button><button class="lB" data-letter="D">V</button>
-          <button class="lB" data-letter="D">W</button><button class="lB" data-letter="D">X</button>
-          <button class="lB" data-letter="D">Y</button><button class="lB" data-letter="D">Z</button>
-        <br>
-        <br>
-        <br>
-      <a class='dropdown-trigger btn' data-target='dropdown1' style="font-size: 30px; color: rgb(109, 31, 31);;">Search by ingredient</a>
-    <ul id='dropdown1' class='dropdown-content'></ul>
-    <br>
-    <!-- display -->
-    <h4 id="drinkName"></h4>
-    <img id="drinkImage" src="" width="200px">
-    <p id="instructions"></p>
-    <ul id="ingredientUL"></ul>
-    <ul id="measureUL"></ul>
-    <ul id="letterlist"></ul>
-    <div id="findBar">Find-a-bar</div>
-  </section>
-</div>
-   <script src="assets/javascript/cocktail.js"></script>
+      <img src="images/cocktails.png" class="profile-img" target="blank">
+    </a>
+
+    <div id="searchName">
+      <input type="text" id="search-input">
+      <button id="searchNameButton">search</button>
+    </div>
+  </ul>
+  <div>
+    <section class="cocktail-container" role="main">
+      <button class="lB" data-letter="A">A</button><button class="lB" data-letter="B">B</button>
+      <button class="lB" data-letter="C">C</button><button class="lB" data-letter="D">D</button>
+      <button class="lB" data-letter="E">E</button><button class="lB" data-letter="F">F</button>
+      <button class="lB" data-letter="D">G</button><button class="lB" data-letter="D">H</button>
+      <button class="lB" data-letter="D">I</button><button class="lB" data-letter="D">J</button>
+      <button class="lB" data-letter="D">K</button><button class="lB" data-letter="D">L</button>
+      <button class="lB" data-letter="D">M</button><button class="lB" data-letter="D">N</button>
+      <button class="lB" data-letter="D">O</button><button class="lB" data-letter="D">P</button>
+      <button class="lB" data-letter="D">Q</button><button class="lB" data-letter="D">R</button>
+      <button class="lB" data-letter="D">S</button><button class="lB" data-letter="D">T</button>
+      <button class="lB" data-letter="D">U</button><button class="lB" data-letter="D">V</button>
+      <button class="lB" data-letter="D">W</button><button class="lB" data-letter="D">X</button>
+      <button class="lB" data-letter="D">Y</button><button class="lB" data-letter="D">Z</button>
+      <br>
+      <br>
+      <br>
+      <a class='dropdown-trigger btn' data-target='dropdown1' style="font-size: 30px; color: rgb(109, 31, 31);;">Search
+        by ingredient</a>
+
+
+
+
+
+      <!-- letterbuttons -->
+
+      <!-- dropdown -->
       
+      <br>
+      <!-- display -->
+      <h4 id="drinkName"></h4>
+      <img id="drinkImage" src="" width="200px">
+      <p id="instructions"></p>
+      <ul id="ingredientUL"></ul>
+      <ul id="measureUL"></ul>
+      <ul id="letterlist"></ul>
+      <div id="findBar">Find-a-bar</div>
+    </section>
+  </div>
+  <script src="assets/javascript/cocktail.js"></script>
+
 </body>
+
 </html>
