@@ -11,6 +11,8 @@
 }
 .instruct{
   flex-flow: column wrap;
+  padding: 15px;
+  /* background-color: #fceac5; */
 }
 .imgcontainer{
   margin-left: 5px;
@@ -103,8 +105,15 @@ p {
   margin: 0 auto;
 }
 
-
-
+#drinkImage{
+  border-color: #d48185;
+  border-width: 10px;
+  border-style:solid;
+  border-radius: 15px 50px;
+}
+#instructions{
+ 
+}
 
 
   /* .button{
