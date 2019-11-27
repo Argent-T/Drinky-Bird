@@ -74,35 +74,45 @@
 
 
 
-            <!-- dropdown -->
-            <a class='dropdown-trigger btn' data-target='dropdown1'>Search by ingredient</a>
-            <ul id='dropdown1' class='dropdown-content'></ul>
-            <br>
+        <!-- dropdown -->
+        <a class='dropdown-trigger btn' data-target='dropdown1'>Search by ingredient</a>
+        <ul id='dropdown1' class='dropdown-content'></ul>
+        <br>
 
-            <div class="container">
-                <!-- display -->
+        <div class="container">
+            <!-- display -->
 
-                <div class="row">
-                    <div class="col "></div>
-                    <div class="col display">
+            <div class="row">
+                <div class="col "></div>
+                <div class="col display">
+                    <div class="display instruct">
                         <h4 id="drinkName"></h4>
-                        <img id="drinkImage" src="" width="200px">
+                        <div>
+                            <img id="drinkImage" src="" width="200px">
+                        </div>
                         <p id="instructions"></p>
-                        <ul id="ingredientUL"></ul>
-                        <ul id="measureUL"></ul>
-                        <ul id="letterlist" class="display"></ul>
+                        <div class="row">
+                            <div class="col sm6">
+                                <ul id="ingredientUL"></ul>
+                            </div>
+                            <div class="col sm6">
+                                <ul id="measureUL"></ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col "></div>
-
+                    <ul id="letterlist" class="display"></ul>
                 </div>
+                <div class="col "></div>
+
             </div>
-
-            <div id="findBar">Find-a-bar</div>
-
-
-
-
         </div>
+
+        <div id="findBar">Find-a-bar</div>
+
+
+
+
+    </div>
     </div>
 
 

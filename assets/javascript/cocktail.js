@@ -41,6 +41,7 @@ searchInput.addEventListener("keyup", function (event) {
 
 function searchByName(cocktailName) {
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + cocktailName
+    document.querySelector(".instruct").style.display ="flex"
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -192,6 +193,7 @@ function clearAll(){
     drinkImage.src = "";
     instructionText.textContent = "";
     document.querySelector("#letterlist").innerHTML = "";
+    document.querySelector(".instruct").style.display ="none"
     console.log("clear");
 }
 

@@ -1,45 +1,38 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    text-align:left;
-    
-        display: block;
-       
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 1px;
-        margin-inline-end: 1px;
-        padding-inline-start: 40px;
-    
-   }
-   h4 {
-    display: block;
-    margin-block-start: 1.33em;
-    margin-block-end: 1.33em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-size: 25px;
-}
+
+
    
-  li {
-    
-    display: inline-block;
-    font-size: 20px;
-    text-align: center;
- }
+
 .display{
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  
+}
+.instruct{
+  flex-flow: column wrap;
+}
+.imgcontainer{
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .imageText{
   text-overflow: clip;
-    overflow: hidden;
-    width: 200px;
-    height: 30px;
+  overflow: hidden;
+  width: 200px;
+  height: 30px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+#ingredientUL{
+  text-align:left;
+  font-size: 20px;
+}
+#measureUL{
+  text-align:left;
+  font-size: 20px;
 }
 .header{
   background-color: white;
@@ -59,43 +52,42 @@ ul {
 .search-input{
     position:center;
 }
-  li a {
+li a {
     padding: 14px 16px;
     font-size: 25px;
     text-decoration: crimson;
     color:rgb(109, 31, 31);
-  }
-  .lB {
-     text-align: center;
-     display: inline;
-     color:rgb(109, 31, 31);
-     font-size:30px;
-     
-  } 
-  p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-size: 20px;
+}
+.lB {
+  text-align: center;
+  display: inline;
+  color:rgb(109, 31, 31);
+  font-size:30px;
+} 
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 20px;
 }
 
-  body{
-    /* background-image: url("../background.png"); */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    margin: 0px 1px ;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+body{
+  /* background-image: url("../background.png"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0px 1px ;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-  .button{
+  /* .button{
       padding: 4vw
-  }
+  } */
  
 .nav{
       width: 100%;
@@ -104,7 +96,7 @@ ul {
       margin-top: 3vw;
   }
 
-  .cocktail-container {
+  /* .cocktail-container {
       padding: 30px 60px;
       background-color:#f0f0f0;
       margin:40px auto 0;
@@ -112,7 +104,7 @@ ul {
       position:relative;
       width:940px;
   }
- 
+  */
 
 
   
