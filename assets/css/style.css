@@ -45,8 +45,11 @@
 
 .letters{
   display: flex;
-  flex-direction: row;  
-  justify-content: space-around;
+  flex-direction: column;  
+  justify-content: center;
+  flex-wrap: wrap;
+
+ 
 }
 
 .search-input{
