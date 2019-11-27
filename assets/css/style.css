@@ -24,22 +24,38 @@ ul {
 }
    
   li {
-    float: left;
-    background-color: rgb(248, 235, 219);
-    display: list-item;
+    
+    display: inline-block;
     font-size: 20px;
     text-align: center;
  }
+.display{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.imageText{
+  text-overflow: clip;
+    overflow: hidden;
+    width: 200px;
+    height: 30px;
+}
+.header{
+  background-color: white;
+}
 
 #findBar {
     font-size: 30px;
 }
 
- .profile-img {
-    width: 150px;
-    border-radius: 50%;
-    
+
+.letters{
+  display: flex;
+  flex-direction: row;  
+  justify-content: space-around;
 }
+
 .search-input{
     position:center;
 }
@@ -54,6 +70,7 @@ ul {
      display: inline;
      color:rgb(109, 31, 31);
      font-size:30px;
+     
   } 
   p {
     display: block;
@@ -65,7 +82,7 @@ ul {
 }
 
   body{
-    background-image: url("../background.png");
+    /* background-image: url("../background.png"); */
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -99,7 +116,7 @@ ul {
 
 
   
-  
+/*   
   @media screen and (max-width: 1092px) {
     
     .cocktail-container {
@@ -128,4 +145,4 @@ ul {
         width:940px;
     }
    
-  }
+  } */
