@@ -36,93 +36,96 @@
                         <span>Search</span>
                     </div>
                     <div class="file-path-wrapper">
-                        <input type="text" id="search-input" placeholder="Search by Cocktail Name">
+                        <input type="text" id="search-input" placeholder="Search by Cocktail Name"
+                            style="margin:0 auto">
                     </div>
-                    
+
 
             </form>
         </div>
     </header>
 
     <main>
-        <div class="row main">
-            <div class="letters col s12">
-                <div>
-                    <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="A">A</button><button
-                        class="lB waves-effect waves-red accent-3 btn-flat" data-letter="B">B</button>
-                    <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="C">C</button><button
-                        class="lB waves-effect waves-red accent-3 btn-flat" data-letter="D">D</button>
-                    <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="E">E</button><button
-                        class="lB waves-effect waves-red accent-3 btn-flat" data-letter="F">F</button>
-                    <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="G">G</button><button
-                        class="lB waves-effect waves-red accent-3 btn-flat" data-letter="H">H</button>
-                    <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="I">I</button><button
-                        class="lB waves-effect waves-red accent-3 btn-flat" data-letter="J">J</button>
-                    <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="K">K</button><button
-                        class="lB waves-effect waves-red accent-3 btn-flat" data-letter="L">L</button>
-                    <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="M">M</button>
-                </div>
-                <div>
-                    <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="N">N</button>
-                    <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="O">O</button><button
-                        class="lB waves-effect waves-red accent-3 btn-flat" data-letter="P">P</button>
-                    <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="Q">Q</button><button
-                        class="lB waves-effect waves-red accent-3 btn-flat" data-letter="R">R</button>
-                    <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="S">S</button><button
-                        class="lB waves-effect waves-red accent-3 btn-flat" data-letter="T">T</button>
-                    <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="U">U</button><button
-                        class="lB waves-effect waves-red accent-3 btn-flat" data-letter="V">V</button>
-                    <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="W">W</button><button
-                        class="lB waves-effect waves-red accent-3 btn-flat" data-letter="X">X</button>
-                    <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="Y">Y</button><button
-                        class="lB waves-effect waves-red accent-3 btn-flat" data-letter="Z">Z</button>
-                </div>
-                <br>
-                <br>
-                <br>
-            </div>
-
-
-
-
-            <!-- dropdown -->
-            <a class='dropdown-trigger btn waves-effect waves-red accent-3' data-target='dropdown1'>Search by
-                ingredient</a>
-            <ul id='dropdown1' class='dropdown-content'></ul>
-            <br>
-
-            <div class="container">
-                <!-- display -->
-
-                <div class="row display">
-
-                    <div class="col display">
-                        <div class="display instruct">
-                            <h4 id="drinkName"></h4>
-                            <div>
-                                <img id="drinkImage" src="" width="200px">
-                            </div>
-                            <p id="instructions"></p>
-                            <div class="row">
-                                <div class="col sm6">
-                                    <ul id="ingredientUL"></ul>
-                                </div>
-                                <div class="col sm6">
-                                    <ul id="measureUL"></ul>
-                                </div>
-                            </div>
-                        </div>
-                        <ul id="letterlist" class="display"></ul>
+        <div >
+            <div class="row main">
+                <div class="letters col s12">
+                    <div>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="A">A</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="B">B</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="C">C</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="D">D</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="E">E</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="F">F</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="G">G</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="H">H</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="I">I</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="J">J</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="K">K</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="L">L</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="M">M</button>
                     </div>
-
+                    <div>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="N">N</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="O">O</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="P">P</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="Q">Q</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="R">R</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="S">S</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="T">T</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="U">U</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="V">V</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="W">W</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="X">X</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="Y">Y</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="Z">Z</button>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
                 </div>
+
+
+
+
+                <!-- dropdown -->
+                <a class='dropdown-trigger btn waves-effect waves-red accent-3' data-target='dropdown1'>Search by
+                    ingredient</a>
+                <ul id='dropdown1' class='dropdown-content'></ul>
+                <br>
+
+                <div class="container">
+                    <!-- display -->
+
+                    <div class="row display">
+
+                        <div class="col display">
+                            <div class="display instruct">
+                                <h4 id="drinkName"></h4>
+                                <div>
+                                    <img id="drinkImage" src="" width="200px">
+                                </div>
+                                <p id="instructions"></p>
+                                <div class="row">
+                                    <div class="col sm6">
+                                        <ul id="ingredientUL"></ul>
+                                    </div>
+                                    <div class="col sm6">
+                                        <ul id="measureUL"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul id="letterlist" class="display"></ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="findBar">Find-a-bar</div>
+
+
+
+
             </div>
-
-            <div id="findBar">Find-a-bar</div>
-
-
-
-
         </div>
 
     </main>

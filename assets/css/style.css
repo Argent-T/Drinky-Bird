@@ -55,6 +55,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  border-color: #d48185;
+  border-top-width: 10px;
+  border-top-style: solid;
 }
 
 #searchName{
@@ -99,6 +102,9 @@ p {
 .margin{
   margin: 0 auto;
 }
+
+
+
 
 
   /* .button{
