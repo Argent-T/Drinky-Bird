@@ -38,6 +38,7 @@
 }
 .header{
   background-color: #ffa3a7;
+  height: 220px;
 
 }
 
@@ -106,10 +107,10 @@ p {
 }
 
 #drinkImage{
-  border-color: #d48185;
-  border-width: 10px;
+  /* border-color: #d48185;
+  border-width: 5px;
   border-style:solid;
-  border-radius: 15px 50px;
+  border-radius: 15px 50px; */
 }
 #searchicon{
   transform: rotate(-45deg);

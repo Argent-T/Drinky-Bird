@@ -74,6 +74,7 @@ function searchByName(cocktailName) {
             // console.log(ingredients);
             // console.log("measurements");
             // console.log(measurements);
+            // Display measurements and ingredients///////////////////////
             ingredientList.innerHTML = "";
             measurementList.innerHTML = "";
             for (i = 0; i < ingredients.length; i++) {
