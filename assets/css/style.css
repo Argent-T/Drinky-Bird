@@ -111,8 +111,9 @@ p {
   border-style:solid;
   border-radius: 15px 50px;
 }
-#instructions{
- 
+#searchicon{
+  transform: rotate(-45deg);
+  font-size: 20px;
 }
 
 
