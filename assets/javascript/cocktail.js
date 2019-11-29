@@ -74,6 +74,7 @@ function searchByName(cocktailName) {
             // console.log(ingredients);
             // console.log("measurements");
             // console.log(measurements);
+            // Display measurements and ingredients///////////////////////
             ingredientList.innerHTML = "";
             measurementList.innerHTML = "";
             for (i = 0; i < ingredients.length; i++) {
@@ -147,7 +148,11 @@ for (i = 0; i < ingredientSearchList.length; i++) {
     li.innerHTML = '<a class="ingredientOption" data-name="' + option + '">' + option + '</a>';
     document.querySelector("#dropdown1").appendChild(li);
 }
-$('.dropdown-trigger').dropdown();
+// $('.dropdown-trigger').dropdown();
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, constrainWidth = true);
+  });
 
 $(document).on("click", ".ingredientOption", function () {
     clearAll();
