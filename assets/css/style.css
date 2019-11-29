@@ -185,4 +185,13 @@ p {
     
 
 
-    
+.carousel .carousel-item>img {
+    width: 30%;
+}
+.carousel {
+  height: 400px;
+}
+.carousel.carousel-slider .carousel-item h2 {
+  margin-top:-1px;
+  margin-bottom:-1px;
+}
