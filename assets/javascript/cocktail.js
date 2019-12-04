@@ -7,8 +7,8 @@ var drinkImage = document.querySelector("#drinkImage");
 var drinkName = document.querySelector("#drinkName");
 var letterbutton = document.querySelectorAll(".lB");
 var letterList = document.querySelector("#letterlist");
-
-
+var caroTitle = document.querySelectorAll(".carotitle");
+var caroImg = document.querySelectorAll(".caro1");
 
 
 
@@ -17,7 +17,9 @@ var letterList = document.querySelector("#letterlist");
 document.querySelector("#searchNameButton").addEventListener("click", function (event) {
     event.preventDefault();
     cocktailName = searchInput.value.trim();
+    
     if (cocktailName !== "") {
+        document.querySelector(".carouwrap").style.display="none";
         document.querySelector("#letterlist").innerHTML = "";
         searchByName(cocktailName);
     }
@@ -26,7 +28,10 @@ document.querySelector("#searchNameButton").addEventListener("click", function (
 
 searchInput.addEventListener("keyup", function (event) {
     event.preventDefault();
+    
     if (event.key === "Enter") {
+        console.log("searchtest");
+        document.querySelector(".carouwrap").style.display="none";
         document.querySelector("#letterlist").innerHTML = "";
         cocktailName = searchInput.value.trim();
         if (cocktailName !== "") {
@@ -41,19 +46,22 @@ searchInput.addEventListener("keyup", function (event) {
 
 function searchByName(cocktailName) {
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + cocktailName
-    document.querySelector(".instruct").style.display ="flex"
+    document.querySelector(".instruct").style.display = "flex"
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
         // console.log("cocktail");
-        // console.log(response);
+        console.log(response);
         // make error resolution better later////////////////////////
         if (response.drinks == null) {
-            alert("not found")
+            // alert("not found")
+            document.querySelector("#notfound").style.display = "inline";
+            console.log("notfound");
             return;
         }
         else {
+            document.querySelector("#notfound").style.display = "none";
             instructions = response.drinks[0].strInstructions;
             // console.log(instructions);
             instructionText.textContent = instructions;
@@ -98,7 +106,7 @@ function searchByName(cocktailName) {
 // SEARCH BY LETTER function////////////////////////////////////////////////////
 $(".lB").on("click", function () {
     // clear rendered results
-   clearAll();
+    clearAll();
     // begin search
     var letter = $(this).attr("data-letter");
     searchByLetter(letter);
@@ -149,10 +157,10 @@ for (i = 0; i < ingredientSearchList.length; i++) {
     document.querySelector("#dropdown1").appendChild(li);
 }
 // $('.dropdown-trigger').dropdown();
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems, constrainWidth = true);
-  });
+});
 
 $(document).on("click", ".ingredientOption", function () {
     clearAll();
@@ -190,7 +198,7 @@ function searchIngredient(ingredient) {
 
 
 
-function clearAll(){
+function clearAll() {
     searchInput.value = "";
     drinkName.textContent = "";
     ingredientList.innerHTML = "";
@@ -198,7 +206,9 @@ function clearAll(){
     drinkImage.src = "";
     instructionText.textContent = "";
     document.querySelector("#letterlist").innerHTML = "";
-    document.querySelector(".instruct").style.display ="none"
+    document.querySelector(".instruct").style.display = "none"
+    document.querySelector("#notfound").style.display = "none";
+    document.querySelector(".carouwrap").style.display="none";
     console.log("clear");
 }
 
@@ -238,6 +248,61 @@ function listIngredients() {
 
     });
 }
+// CAROUSEL initialization/////////////////////////////////////////////////
+// document.addEventListener('DOMContentLoaded', function () {
+//     var elems = document.querySelectorAll('.carousel');
+//     var instances = M.Carousel.init(elems);
+// });
+$('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+});
+
+// Carousel contents///////////////////////////////////////////
+carousel();
+function carousel() {
+    var images = [];
+    var namesran = [];
+    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+    for (i = 0; i < 4; i++) {
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            images.push(response.drinks[0].strDrinkThumb);
+            namesran.push(response.drinks[0].strDrink);
+            console.log("Random Cocktail: ")
+            console.log(response);
+            // console.log(images);
+            console.log(namesran.length);
+            
+            if(namesran.length == 4){
+                
+                for(i = 0; i < 4; i++){
+                    caroTitle[i].textContent = namesran[i];
+                    caroImg[i].src = images[i];
+                    caroImg[i].setAttribute("data-name",namesran[i])
+                }
+            }
+        });
+    }
+
+}
+
+
+$(document).on("click", ".caro1", function () {
+    document.querySelector(".carouwrap").style.display="none";
+    document.querySelector("#letterlist").innerHTML = "";
+    var cocktailName = $(this).attr("data-name");
+    searchByName(cocktailName);
+});
+
+
+
+
+
+
+
 
 
 
