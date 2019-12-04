@@ -17,7 +17,9 @@ var caroImg = document.querySelectorAll(".caro1");
 document.querySelector("#searchNameButton").addEventListener("click", function (event) {
     event.preventDefault();
     cocktailName = searchInput.value.trim();
+    
     if (cocktailName !== "") {
+        document.querySelector(".carouwrap").style.display="none";
         document.querySelector("#letterlist").innerHTML = "";
         searchByName(cocktailName);
     }
@@ -25,10 +27,11 @@ document.querySelector("#searchNameButton").addEventListener("click", function (
 });
 
 searchInput.addEventListener("keyup", function (event) {
-
     event.preventDefault();
+    
     if (event.key === "Enter") {
         console.log("searchtest");
+        document.querySelector(".carouwrap").style.display="none";
         document.querySelector("#letterlist").innerHTML = "";
         cocktailName = searchInput.value.trim();
         if (cocktailName !== "") {
@@ -58,6 +61,7 @@ function searchByName(cocktailName) {
             return;
         }
         else {
+            document.querySelector("#notfound").style.display = "none";
             instructions = response.drinks[0].strInstructions;
             // console.log(instructions);
             instructionText.textContent = instructions;
@@ -204,6 +208,7 @@ function clearAll() {
     document.querySelector("#letterlist").innerHTML = "";
     document.querySelector(".instruct").style.display = "none"
     document.querySelector("#notfound").style.display = "none";
+    document.querySelector(".carouwrap").style.display="none";
     console.log("clear");
 }
 
