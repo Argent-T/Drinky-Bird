@@ -65,5 +65,5 @@ $("#searchCity").on("click", function (event) {
     $.ajax({
         url: queryUrl,
         method: "GET"
-    }).then(updatePage);
+    }).then();
 });

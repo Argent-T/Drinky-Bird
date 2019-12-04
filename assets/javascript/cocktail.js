@@ -297,7 +297,11 @@ $(document).on("click", ".caro1", function () {
     searchByName(cocktailName);
 });
 
-
+autoplay();
+function autoplay() {
+    $('.carousel').carousel('next');
+    setTimeout(autoplay, 8500);
+}
 
 
 
