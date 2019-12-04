@@ -2,82 +2,216 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>cocktail</title>
-  <!-- FONTS -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-    integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/materalize.css">
-  <link rel="stylesheet" href="css/style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- MEDIA QUERIES -->
-  <link rel="stylesheet" media="screen and (max-width: 767px)" href="css/style.css">
-  <!--Script-->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Drinky Bird</title>
 </head>
 
 <body>
-  <ul>
-    <a href="cocktails.png">
-      <img src="images/cocktails.png" class="profile-img" target="blank">
-    </a>
 
-    <div id="searchName">
-      <input type="text" id="search-input">
-      <button id="searchNameButton">search</button>
-    </div>
-  </ul>
-  <div>
-    <section class="cocktail-container" role="main">
-      <button class="lB" data-letter="A">A</button><button class="lB" data-letter="B">B</button>
-      <button class="lB" data-letter="C">C</button><button class="lB" data-letter="D">D</button>
-      <button class="lB" data-letter="E">E</button><button class="lB" data-letter="F">F</button>
-      <button class="lB" data-letter="D">G</button><button class="lB" data-letter="D">H</button>
-      <button class="lB" data-letter="D">I</button><button class="lB" data-letter="D">J</button>
-      <button class="lB" data-letter="D">K</button><button class="lB" data-letter="D">L</button>
-      <button class="lB" data-letter="D">M</button><button class="lB" data-letter="D">N</button>
-      <button class="lB" data-letter="D">O</button><button class="lB" data-letter="D">P</button>
-      <button class="lB" data-letter="D">Q</button><button class="lB" data-letter="D">R</button>
-      <button class="lB" data-letter="D">S</button><button class="lB" data-letter="D">T</button>
-      <button class="lB" data-letter="D">U</button><button class="lB" data-letter="D">V</button>
-      <button class="lB" data-letter="D">W</button><button class="lB" data-letter="D">X</button>
-      <button class="lB" data-letter="D">Y</button><button class="lB" data-letter="D">Z</button>
-      <br>
-      <br>
-      <br>
-      <a class='dropdown-trigger btn' data-target='dropdown1' style="font-size: 30px; color: rgb(109, 31, 31);;">Search
-        by ingredient</a>
+    <header class="header">
+
+        <div id="logo">
+            <a href="#">
+                <img src="assets/images/drinkybirdtextupdate.png" class="logo">
+            </a>
+        </div>
+        <!-- header content -->
+        <div id="searchName">
+            <div class="row">
+                <div class="col s10" style="padding:0px">
+                    <form>
+                        <div class="file-field input-field margin">
+                            <div id="searchNameButton" class="btn red lighten-2">
+                                <div id="searchicon">&#9906</div>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input type="text" id="search-input" placeholder="Cocktail Name" style="margin:0 auto">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col s2" style="padding:0px">
+                    <a class='dropdown-trigger btn waves-effect waves-red accent-3'
+                        style="height: 45px; background-color:#E57373;line-height: 44px; float: right;"
+                        data-target='dropdown1'>
+                        Ingredient Search</a>
+                    <ul id='dropdown1' class='dropdown-content'></ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- letter buttons -->
+    <main>
+        <div>
+            <div class="row main">
+                <div class="letters col s12">
+                    <div>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="A">A</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="B">B</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="C">C</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="D">D</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="E">E</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="F">F</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="G">G</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="H">H</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="I">I</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="J">J</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="K">K</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="L">L</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="M">M</button>
+                    </div>
+                    <div>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="N">N</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="O">O</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="P">P</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="Q">Q</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="R">R</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="S">S</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="T">T</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="U">U</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="V">V</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="W">W</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="X">X</button>
+                        <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="Y">Y</button><button
+                            class="lB waves-effect waves-red accent-3 btn-flat" data-letter="Z">Z</button>
+                    </div>
+                    <br>
+
+                </div>
+                   <div id="container">
+                <div class="row carouwrap">
+                    <div class="col s12">
+                        <div class="carousel demo-carousel">
+
+                            <div class="carousel-item  red lighten-1 white-text" href="#one!">
+                                <h2 class="carotitle" data-name=""></h2>
+                                <img class="caro1" data-name="" src="" width="50px">
+
+                            </div>
+                            <div class="carousel-item red lighten-1 white-text" href="#two!">
+                                <h2 class="carotitle"></h2>
+                                <img class="caro1" data-name="" src="">
+                            </div>
+                            <div class="carousel-item red lighten-1 white-text" href="#three!">
+                                <h2 class="carotitle"></h2>
+                                <img class="caro1" data-name="" src="">
+                            </div>
+                            <div class="carousel-item red lighten-1 white-text" href="#four!">
+                                <h2 class="carotitle"></h2>
+                                <img class="caro1" data-name="" src="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="container display">
+                    <!-- display -->
+
+                    <div class="row display">
+
+                        <div class="col display">
+                            <div class="display instruct" style="display:none">
+                                <div id="notfound" style="display:none">
+                                    <h4>Sorry, we couldnt find this drink!</h4>
+                                </div>
+                                <div class="row">
+                                    <div class="col l6 s12">
+                                        <h4 id="drinkName"></h4>
+                                        <div>
+                                            <img id="drinkImage" src="" width="300px">
+                                        </div>
+                                    </div>
+                                    <div class="col l6 s12">
+
+                                        <!-- <h5>Instructions</h5> -->
+
+                                        <!-- <h5>Ingredients</h5> -->
+                                        <div class="row display" style="margin-top: 60px;">
+                                            <div class="col sm6">
+                                                <ul id="ingredientUL"></ul>
+                                            </div>
+                                            <div class="col sm6">
+                                                <ul id="measureUL"></ul>
+                                            </div>
+                                        </div>
+                                        <p id="instructions"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul id="letterlist" class="display"></ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="findBar">Find-a-bar</div>
+
+                <!-- bar display -->
 
 
 
+                <div class="row ">
+                    <!-- search bar  need to align next to wall-->
+                    <div id='searchContainer' class="col l12 searchstyle" >
+                        <form id="searchCity">
+                            <div class="file-field input-field margin">
+                                <div id="searchCityButton" class="btn red lighten-2">
+                                    <div id="searchicon">&#9906</div>
+                                </div>
+                                <div class="file-path-wrapper" style="padding: 0px;">
+                                <input type="text" id="userInput" class="form-control"
+                                    placeholder="Search For Bars by City" style="margin:0 auto; background-color: white;">
+                            </div>
+                                </div>
+                        </form>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col l12">
+                            <div id="displayBox" ></div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
 
 
-      <!-- letterbuttons -->
+    <!-- footer -->
+    <footer class="page-footer">
 
-      <!-- dropdown -->
-      
-      <br>
-      <!-- display -->
-      <h4 id="drinkName"></h4>
-      <img id="drinkImage" src="" width="200px">
-      <p id="instructions"></p>
-      <ul id="ingredientUL"></ul>
-      <ul id="measureUL"></ul>
-      <ul id="letterlist"></ul>
-      <div id="findBar">Find-a-bar</div>
-    </section>
-  </div>
-  <script src="assets/javascript/cocktail.js"></script>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2019 Thomas Argent, Alexander Garcia, Ana Suvac
+
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/javascript/cocktail.js"></script>
+    <script src="assets/javascript/script.js"></script>
 
 </body>
 

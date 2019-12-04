@@ -1,84 +1,125 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    text-align:left;
-    
-        display: block;
-       
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 1px;
-        margin-inline-end: 1px;
-        padding-inline-start: 40px;
-    
-   }
-   h4 {
-    display: block;
-    margin-block-start: 1.33em;
-    margin-block-end: 1.33em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-size: 25px;
-}
+
    
-  li {
-    float: left;
-    background-color: rgb(248, 235, 219);
-    display: list-item;
-    font-size: 20px;
-    text-align: center;
- }
+
+.display{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+.instruct{
+  flex-flow: column wrap;
+  padding: 15px;
+  /* background-color: #fceac5; */
+}
+.imgcontainer{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.imageText{
+  text-overflow: clip;
+  overflow: hidden;
+  width: 200px;
+  height: 30px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+#ingredientUL{
+  text-align:left;
+  font-size: 20px;
+}
+#measureUL{
+  text-align:left;
+  font-size: 20px;
+}
+.header{
+  background-color: #ffa3a7;
+  height: 220px;
+
+}
 
 #findBar {
     font-size: 30px;
 }
 
- .profile-img {
-    width: 150px;
-    border-radius: 50%;
-    
+
+.letters{
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  flex-wrap: wrap;
 }
-.search-input{
-    position:center;
+
+.main{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-color: #d48185;
+  border-top-width: 10px;
+  border-top-style: solid;
 }
-  li a {
+
+#searchName{
+   background-color:white;
+
+}
+li a {
     padding: 14px 16px;
     font-size: 25px;
     text-decoration: crimson;
     color:rgb(109, 31, 31);
-  }
-  .lB {
-     text-align: center;
-     display: inline;
-     color:rgb(109, 31, 31);
-     font-size:30px;
-  } 
-  p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-size: 20px;
+}
+.lB {
+  text-align: center;
+  display: inline;
+  color:rgb(109, 31, 31);
+  font-size:30px;
+} 
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 20px;
 }
 
-  body{
-    background-image: url("../background.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    margin: 0px 1px ;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+#dropdown1{
+  display:inline-flex;
+}
 
-  .button{
+#logo{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 10px;
+  border-color: #d48185;
+  border-bottom-width: 10px;
+  border-bottom-style: solid;
+}
+
+.margin{
+  margin: 0 auto;
+}
+
+#drinkImage{
+  /* border-color: #d48185;
+  border-width: 5px;
+  border-style:solid;
+  border-radius: 15px 50px; */
+}
+#searchicon{
+  transform: rotate(-45deg);
+  font-size: 20px;
+}
+
+
+  /* .button{
       padding: 4vw
-  }
+  } */
  
 .nav{
       width: 100%;
@@ -87,7 +128,7 @@ ul {
       margin-top: 3vw;
   }
 
-  .cocktail-container {
+  /* .cocktail-container {
       padding: 30px 60px;
       background-color:#f0f0f0;
       margin:40px auto 0;
@@ -95,11 +136,11 @@ ul {
       position:relative;
       width:940px;
   }
- 
+  */
 
 
   
-  
+/*   
   @media screen and (max-width: 1092px) {
     
     .cocktail-container {
@@ -128,4 +169,39 @@ ul {
         width:940px;
     }
    
+  } */
+
+  
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
   }
+
+  main {
+    flex: 1 0 auto;
+  }
+    
+
+
+.carousel .carousel-item>img {
+   
+}
+.carousel {
+  height: 400px;
+}
+.carousel.carousel-slider .carousel-item h2 {
+  margin-top:-1px;
+  margin-bottom:-1px;
+}
+.carousel h2 {
+
+      display: block;
+      font-size: 1.5em;
+      margin-block-start: 0.83em;
+      margin-block-end: 0.83em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+ 
+}
