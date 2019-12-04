@@ -24,7 +24,7 @@
     <header class="header">
 
         <div id="logo">
-            <a href="#">
+            <a href="index.html">
                 <img src="assets/images/drinkybirdtextupdate.png" class="logo">
             </a>
         </div>
@@ -32,7 +32,7 @@
         <div id="searchName">
             <div class="row">
                 <div class="col s10" style="padding:0px">
-                    <form>
+                    <form onsubmit="return false;">
                         <div class="file-field input-field margin">
                             <div id="searchNameButton" class="btn red lighten-2">
                                 <div id="searchicon">&#9906</div>
@@ -58,8 +58,10 @@
     <main>
         <div>
             <div class="row main">
+                <br>
                 <div class="letters col s12">
-                    <div>
+                    <div style="border-top-color: #ffa3a7;
+                    border-top-style: solid; background-color:white;">
                         <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="A">A</button><button
                             class="lB waves-effect waves-red accent-3 btn-flat" data-letter="B">B</button>
                         <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="C">C</button><button
@@ -74,7 +76,8 @@
                             class="lB waves-effect waves-red accent-3 btn-flat" data-letter="L">L</button>
                         <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="M">M</button>
                     </div>
-                    <div>
+                    <div style="border-bottom-color: #ffa3a7;
+                    border-bottom-style: solid; background-color:white;">
                         <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="N">N</button>
                         <button class="lB waves-effect waves-red accent-3 btn-flat" data-letter="O">O</button><button
                             class="lB waves-effect waves-red accent-3 btn-flat" data-letter="P">P</button>
@@ -142,11 +145,13 @@
 
                                         <!-- <h5>Ingredients</h5> -->
                                         <div class="row display" style="margin-top: 60px;">
-                                            <div class="col sm6">
-                                                <ul id="ingredientUL"></ul>
-                                            </div>
-                                            <div class="col sm6">
-                                                <ul id="measureUL"></ul>
+                                            <div class="col-container">
+                                                <div class="col sm6">
+                                                    <ul id="ingredientUL"></ul>
+                                                </div>
+                                                <div class="col sm6">
+                                                    <ul id="measureUL"></ul>
+                                                </div>
                                             </div>
                                         </div>
                                         <p id="instructions"></p>
@@ -167,24 +172,24 @@
 
                 <div class="row ">
                     <!-- search bar  need to align next to wall-->
-                    <div id='searchContainer' class="col l12 searchstyle" >
-                        <form id="searchCity">
+                    <div id='searchContainer' class="col s12" style="padding: 0px;">
+                        <form id="searchCity" class="searchstyle">
                             <div class="file-field input-field margin">
                                 <div id="searchCityButton" class="btn red lighten-2">
                                     <div id="searchicon">&#9906</div>
                                 </div>
-                                <div class="file-path-wrapper" style="padding: 0px;">
-                                <input type="text" id="userInput" class="form-control"
-                                    placeholder="Search For Bars by City" style="margin:0 auto; background-color: white;">
-                            </div>
+                                <div class="file-path-wrapper" style=" background-color: white;">
+                                    <input type="text" id="userInput" class="form-control"
+                                        placeholder="Search For Bars by City" style="margin:0 auto;">
                                 </div>
+                            </div>
                         </form>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col s12">
                             <div id="displayBox"></div>
-                            
+
                         </div>
                     </div>
                 </div>
