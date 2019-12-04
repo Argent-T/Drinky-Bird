@@ -23,16 +23,24 @@ function searchCity(cityId) {
         console.log(response.restaurants[0].restaurant.events_url);
         // finding the images inside the array
         for (var i = 0; i < response.restaurants.length; i++) {
-            var box = $('<div id="box-' + i + '">');
-            var name = $("<h2>").addClass("Name").text(response.restaurants[i].restaurant.name);
-            var phone = $("<h5>").addClass("Phone").text(response.restaurants[i].restaurant.phone_numbers);
-            var barURL = $("<a>").addClass("URL").text(response.restaurants[i].restaurant.events_url).attr("href", response.restaurants[i].restaurant.events_url);
+            var box = $('<div class="boxes" id="box-' + i + '">');
+            var right = $('<div class="pies" id="pie-' + i + '">');
+            var name = $("<h4>").addClass("Name").text(response.restaurants[i].restaurant.name);
+            var phone = $("<div>").addClass("Phone").text('Phone Number: ' + response.restaurants[i].restaurant.phone_numbers);
+            var barURL = $("<a>").addClass("URL").text('Click Here for More Information ').attr("href", response.restaurants[i].restaurant.events_url);
             var img = $("<img>").addClass("Image2").attr("src", response.restaurants[i].restaurant.featured_image);
-            var ratings = $("<a2>").addClass("Highlights").text(response.restaurants[i].restaurant.user_rating.aggregate_rating);
-            var address = $("<a3>").addClass("Locations").text(response.restaurants[i].restaurant.location.address);
+            var ratings = $("<div>").addClass("Ratings").text('Rating: ' + response.restaurants[i].restaurant.user_rating.aggregate_rating);
+            var address = $("<div>").addClass("Locations").text('Address: ' + response.restaurants[i].restaurant.location.address);
             //go find the id in html
             console.log(barURL);
-            $("#displayBox").append(box, name, phone, barURL, img, ratings, address);
+
+           
+            right.append(name, phone, barURL, ratings, address);
+            box.append(img);
+           
+            box.append(right);
+            $("#displayBox").append(box)
+            
         }
     });
 };
@@ -65,5 +73,5 @@ $("#searchCity").on("click", function (event) {
     $.ajax({
         url: queryUrl,
         method: "GET"
-    }).then(updatePage);
+    }).then();
 });
