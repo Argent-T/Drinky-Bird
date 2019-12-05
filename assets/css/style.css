@@ -176,6 +176,9 @@ p {
 main{
   background-color: #FFC7CA;
 }
+.foot{
+ text-align:center;
+}
 .boxes{
   display: flex;
   justify-content: space-between;
