@@ -1,22 +1,14 @@
-# Project-1
+# Drinky Bird
 
 
 ## Description
-I was able to build a weather dashboard application with search functionality to find current weather conditions for multiple cities. You are able to key a city in the search bar and it will display and append other searches.
+Drinky bird is a site which allows users to search for cocktail recipies by name, first letter, and by main ingredient. It also provides local bar locations, descriptions, and ratings wherein the user can order the drinks they choose.
 
 
-
-
-![screenshot of the app]()
-
-![screenshot of the code]()
-
-
-## Business Context
-Using this application will be great for our consumers to be able to see cocktails with detail instructions. Also having a bar search to display local bars where they are that will show ratings, etc.
-
-
-
+## User Story
+Given that I am a Cocktail Enthusiast, 
+I want to be able to search for cocktail recipies using multiple different search methods, 
+and to be able to locate bars within which I can order them. 
 
 ## Credits
 As a group we were able to use these resources for our project: https://materializecss.com/, https://developers.zomato.com/api, https://www.thecocktaildb.com/api.php, and https://www.w3schools.com/. Also special recognition goes to the help of our TAs/Instructor that were able to help us on creating such a dynamic product.
@@ -29,7 +21,7 @@ As a group we were able to use these resources for our project: https://material
 ## License
 MIT License
 
-Copyright (c) [2019] [Thomas Argent, Alexander Garcia, Ana Suvac]
+Copyright (c) [2019] [Thomas Argent, Alexander Garcia]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
