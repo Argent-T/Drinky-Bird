@@ -1,5 +1,8 @@
 # Drinky Bird
 
+![logo](assets/images/drinkybirdtextupdate.png)
+
+
 
 ## Description
 Drinky bird is a site which allows users to search for cocktail recipes by name, first letter, and by main ingredient. It also provides local bar locations, descriptions, and ratings wherein the user can order the drinks they choose.
