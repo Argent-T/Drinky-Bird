@@ -1,17 +1,26 @@
 # Drinky Bird
 
+![logo](assets/images/drinkybirdtextupdate.png)
+
+
 
 ## Description
-Drinky bird is a site which allows users to search for cocktail recipies by name, first letter, and by main ingredient. It also provides local bar locations, descriptions, and ratings wherein the user can order the drinks they choose.
+Drinky bird is a site which allows users to search for cocktail recipes by name, first letter, and by main ingredient. It also provides local bar locations, descriptions, and ratings wherein the user can order the drinks they choose.
 
 
 ## User Story
 Given that I am a Cocktail Enthusiast, 
-I want to be able to search for cocktail recipies using multiple different search methods, 
+I want to be able to search for cocktail recipes using multiple different search methods, 
 and to be able to locate bars within which I can order them. 
 
 ## Credits
 As a group we were able to use these resources for our project: https://materializecss.com/, https://developers.zomato.com/api, https://www.thecocktaildb.com/api.php, and https://www.w3schools.com/. Also special recognition goes to the help of our TAs/Instructor that were able to help us on creating such a dynamic product.
+
+Thomas Argent: Cocktail API and Materialize
+Alexander Garcia: Zomato Api 
+Ana Suvac: css
+Ryan Palmer: Drinky Bird mascot concept art.
+
 
 ## Submission on BCS
 
@@ -21,7 +30,7 @@ As a group we were able to use these resources for our project: https://material
 ## License
 MIT License
 
-Copyright (c) [2019] [Thomas Argent, Alexander Garcia]
+Copyright (c) [2019] [Thomas Argent, Alexander Garcia, Ana Suvac]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
