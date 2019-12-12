@@ -1,4 +1,5 @@
 # Drinky Bird
+https://argent-t.github.io/Drinky-Bird/
 
 ![logo](assets/images/drinkybirdtextupdate.png)
 
