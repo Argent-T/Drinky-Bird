@@ -22,11 +22,6 @@ Ana Suvac: css
 Ryan Palmer: Drinky Bird mascot concept art.
 
 
-## Submission on BCS
-
-* 
-* 
-
 ## License
 MIT License
 
